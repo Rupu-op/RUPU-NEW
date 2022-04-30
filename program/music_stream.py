@@ -132,10 +132,10 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
             await m.reply_photo(
                 photo=image,
                 reply_markup=InlineKeyboardMarkup(buttons),
-                caption=f"💡 **s   »** `{pos}`\n\n"
-                        f"🗂 **:** [{songname}]({link}) | `music`\n"
+                caption=f"👉 **s   »** `{pos}`\n\n"
+                        f"🏷️ **:** [{songname}]({link}) | `music`\n"
                         f"⏱️ **:** `{duration}`\n"
-                        f"🧸 **s :** {requester}",
+                        f"🎧 **s :** {requester}",
             )
             remove_if_exists(image)
         else:
@@ -145,7 +145,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
                 title = songname
                 userid = m.from_user.id
                 image = await thumb(thumbnail, title, userid, ctitle)
-                await suhu.edit("🔄   ...")
+                await suhu.edit("✨   ...")
                 await music_on(chat_id)
                 await add_active_chat(chat_id)
                 await calls.join_group_call(
@@ -165,9 +165,9 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
                 await m.reply_photo(
                     photo=image,
                     reply_markup=InlineKeyboardMarkup(buttons),
-                    caption=f"🗂 **:** [{songname}]({link}) | `music`\n"
+                    caption=f"🏷️ **:** [{songname}]({link}) | `music`\n"
                             f"⏱️ **:** `{duration}`\n"
-                            f"🧸 **s :** {requester}",
+                            f"🎧 **s :** {requester}",
                 )
                 remove_if_exists(image)
             except (NoActiveGroupCall, GroupCallNotFound):
@@ -271,12 +271,12 @@ async def audio_stream(c: Client, m: Message):
                             await m.reply_photo(
                                 photo=image,
                                 reply_markup=InlineKeyboardMarkup(buttons),
-                                caption=f"💡 **s   »** `{pos}`\n\n🗂 **:** [{songname}]({url}) | `music`\n**⏱ :** `{duration}`\n🧸 **s :** {requester}",
+                                caption=f"👉 **s   »** `{pos}`\n\n🏷️ **:** [{songname}]({url}) | `music`\n**⏱ :** `{duration}`\n🎧 **s :** {requester}",
                             )
                             remove_if_exists(image)
                         else:
                             try:
-                                await suhu.edit("🔄   ..")
+                                await suhu.edit("✨   ..")
                                 await music_on(chat_id)
                                 await add_active_chat(chat_id)
                                 await calls.join_group_call(
@@ -296,7 +296,7 @@ async def audio_stream(c: Client, m: Message):
                                 await m.reply_photo(
                                     photo=image,
                                     reply_markup=InlineKeyboardMarkup(buttons),
-                                    caption=f"🗂 **:** [{songname}]({url}) | `music`\n**⏱ :** `{duration}`\n🧸 **s :** {requester}",
+                                    caption=f"🏷️ **:** [{songname}]({url}) | `music`\n**⏱ :** `{duration}`\n🎧 **s :** {requester}",
                                 )
                                 remove_if_exists(image)
                             except (NoActiveGroupCall, GroupCallNotFound):
@@ -346,12 +346,12 @@ async def audio_stream(c: Client, m: Message):
                         await m.reply_photo(
                             photo=image,
                             reply_markup=InlineKeyboardMarkup(buttons),
-                            caption=f"💡 **s   »** `{pos}`\n\n🗂 **:** [{songname}]({url}) | `music`\n**⏱ :** `{duration}`\n🧸 **s :** {requester}",
+                            caption=f"👉 **s   »** `{pos}`\n\n🏷️ **:** [{songname}]({url}) | `music`\n**⏱ :** `{duration}`\n🎧 **s :** {requester}",
                         )
                         remove_if_exists(image)
                     else:
                         try:
-                            await suhu.edit("🔄   ...")
+                            await suhu.edit("✨   ...")
                             await music_on(chat_id)
                             await add_active_chat(chat_id)
                             await calls.join_group_call(
@@ -369,7 +369,7 @@ async def audio_stream(c: Client, m: Message):
                             await m.reply_photo(
                                 photo=image,
                                 reply_markup=InlineKeyboardMarkup(buttons),
-                                caption=f"🗂 **:** [{songname}]({url}) | `music`\n**⏱ :** `{duration}`\n🧸 **s :** {requester}",
+                                caption=f"🏷️ **:** [{songname}]({url}) | `music`\n**⏱ :** `{duration}`\n🎧 **s :** {requester}",
                             )
                             remove_if_exists(image)
                         except (NoActiveGroupCall, GroupCallNotFound):
@@ -456,11 +456,11 @@ async def live_music_stream(c: Client, m: Message):
                     await m.reply_photo(
                         photo=f"{IMG_1}",
                         reply_markup=InlineKeyboardMarkup(buttons),
-                        caption=f"💡 **s   »** `{pos}`\n\n🗂 **:** [m3u8 audio stream]({url}) | `live`\n🧸 **s :** {requester}",
+                        caption=f"👉 **s   »** `{pos}`\n\n🏷️ **:** [m3u8 audio stream]({url}) | `live`\n🎧 **s :** {requester}",
                     )
                 else:
                     try:
-                        await msg.edit_text("🔄   ...")
+                        await msg.edit_text("✨   ...")
                         await music_on(chat_id)
                         await add_active_chat(chat_id)
                         await calls.join_group_call(
@@ -478,7 +478,7 @@ async def live_music_stream(c: Client, m: Message):
                         await m.reply_photo(
                             photo=f"{IMG_2}",
                             reply_markup=InlineKeyboardMarkup(buttons),
-                            caption=f"🗂 **:** [m3u8 audio stream]({url}) | `live`\n🧸 **s :** {requester}",
+                            caption=f"🏷️ **:** [m3u8 audio stream]({url}) | `live`\n🎧 **s :** {requester}",
                         )
                     except (NoActiveGroupCall, GroupCallNotFound):
                         await msg.delete()
@@ -506,12 +506,12 @@ async def live_music_stream(c: Client, m: Message):
                     await m.reply_photo(
                         photo=image,
                         reply_markup=InlineKeyboardMarkup(buttons),
-                        caption=f"💡 **s   »** `{pos}`\n\n🗂 **:** [{songname}]({url}) | `live`\n🧸 **s :** {requester}",
+                        caption=f"👉 **s   »** `{pos}`\n\n🏷️ **:** [{songname}]({url}) | `live`\n🎧 **s :** {requester}",
                     )
                     remove_if_exists(image)
                 else:
                     try:
-                        await msg.edit_text("🔄   ...")
+                        await msg.edit_text("✨   ...")
                         await music_on(chat_id)
                         await add_active_chat(chat_id)
                         await calls.join_group_call(
@@ -529,7 +529,7 @@ async def live_music_stream(c: Client, m: Message):
                         await m.reply_photo(
                             photo=image,
                             reply_markup=InlineKeyboardMarkup(buttons),
-                            caption=f"🗂 **:** [{songname}]({url}) | `live`\n🧸 **s :** {requester}",
+                            caption=f"🏷️ **:** [{songname}]({url}) | `live`\n🎧 **s :** {requester}",
                         )
                         remove_if_exists(image)
                     except (NoActiveGroupCall, GroupCallNotFound):
