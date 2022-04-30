@@ -21,16 +21,11 @@
 - [Telegram Bot Token](https://t.me/botfather)
 - [MongoDB URL](https://telegra.ph/How-to-Get-mongodb-url-02-18)
 
-```console
-root@linux~ $ git clone https://github.com/levina-lab/video-stream
-root@linux~ $ cd video-stream
-root@linux~ $ pip3 install -U -r requirements.txt
-root@linux~ $ cp example.env .env
-```
-> Edit .env with your own values and then start bot with
-```console
-root@linux~ $ python3 main.py
-```
+## Contact & Support
+
+<a href="https://t.me/ITZ_RUPU"><img src="https://img.shields.io/badge/Join-Channel-blue.svg?style=for-the-badge&logo=Telegram"></a><br>
+<a href="https://t.me/SHIVAMDEMON"><img src="https://img.shields.io/badge/Contact-Owner-blue.svg?style=for-the-badge&logo=Telegram"></a>
+
 
 ## License
 
