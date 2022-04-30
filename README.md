@@ -66,26 +66,7 @@ root@linux~ $ python3 main.py
 
 </details>
 
-## Config Vars
-- Checkout all [Available Vars](https://levina.gitbook.io/videostreambot/vars/available-vars)
-- Checkout the [Vars Information](https://levina.gitbook.io/videostreambot/vars/vars-information)
-- Checkout some [Configs](https://levina.gitbook.io/videostreambot/setup-config/config)
-
-## Contact & Support
-
-<a href="https://t.me/VeezSupportGroup"><img src="https://img.shields.io/badge/Join-Group%20Support-blue.svg?style=for-the-badge&logo=Telegram"></a><br>
-<a href="https://t.me/levinachannel"><img src="https://img.shields.io/badge/Join-Updates%20Channel-blue.svg?style=for-the-badge&logo=Telegram"></a><br>
-<a href="https://t.me/dlwrml"><img src="https://img.shields.io/badge/Contact-Repo%20Owner-blue.svg?style=for-the-badge&logo=Telegram"></a>
 
 ## License
 
-Distributed under the [GNU General Public License v3.0 License](https://github.com/levina-lab/video-stream/blob/main/LICENSE) See `LICENSE.md` for more information.
-
-## Credits
-
-- [Levina](https://github.com/levina-lab) ``Dev``
-- [Zxce3](https://github.com/Zxce3) ``Dev``
-- [tofikdn](https://github.com/tofikdn) ``Dev``
-- [xtaodada](https://github.com/xtao-dada) ``Dev``
-- [Laky's](https://github.com/Laky-64) for [``py-tgcalls``](https://github.com/pytgcalls/pytgcalls)
-- [Dan](https://github.com/delivrance) for [``Pyrogram``](https://github.com/pyrogram)
+Distributed under the [GNU General Public License v3.0 License](https://github.com/RUPU-OP/FIRE/blob/main/LICENSE) See `LICENSE.md` for more information.
