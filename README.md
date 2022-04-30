@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://telegra.ph/file/7c38bf5378fa5c7eba601.jpg">
+  <img src="https://telegra.ph/file/0fc01e5996a521ffd33c2.jpg">
 </p>
 <p align="center">
     <br><b>𝐑𝐔𝐏𝐔 𝐌𝐔𝐒𝐈𝐂</b><br>
