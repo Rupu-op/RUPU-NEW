@@ -1,6 +1,7 @@
 import os
 import asyncio
 
+from config import GROUP_SUPPORT
 from driver.core import bot, calls, user
 from driver.database.dbqueue import remove_active_chat
 from driver.queues import (
