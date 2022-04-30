@@ -1,6 +1,8 @@
-<p align="center"><a href="https://t.me/VeezVideoBot"><img src="https://github.com/levina-lab/video-stream/raw/main/driver/veezlogo.png"></a></p>
 <p align="center">
-    <br><b>Video Stream is an Open-Source Telegram Bot project that's allow you to play Video & Music trough the Telegram Group Video Chat</b><br>
+  <img src="https://telegra.ph/file/7c38bf5378fa5c7eba601.jpg">
+</p>
+<p align="center">
+    <br><b>𝐑𝐔𝐏𝐔 𝐌𝐔𝐒𝐈𝐂</b><br>
 </p>
 <p align="center">
     <a href="https://www.codefactor.io/repository/github/levina-lab/video-stream"> <img src="https://www.codefactor.io/repository/github/levina-lab/video-stream/badge?color=red&logo=codacy&style=flat-square" alt="CodeFactor" /></a>
@@ -13,14 +15,6 @@
     <a href="https://github.com/levina-lab/video-stream/network/members"> <img src="https://img.shields.io/github/forks/levina-lab/video-stream?color=red&logo=github&logoColor=blue&style=flat-square" /></a>
     <a href="https://github.com/levina-lab/video-stream/network/members"> <img src="https://img.shields.io/github/stars/levina-lab/video-stream?color=red&logo=github&logoColor=blue&style=flat-square" /></a>
 </p>
-
-## Deployment
-Read the [Docs](https://levina.gitbook.io/videostreambot/deployment/requirements) for Detailed Information and Setup Guide on deploying Bot.
-
-> Click on buttons to Expand!
-<details>
-<summary><b>🔗 Requirements</b></summary>
-<br>
 
 - [Python3.9](https://www.python.org/downloads/release/python-390/)
 - [Telegram API Key](https://docs.pyrogram.org/intro/setup#api-keys)
