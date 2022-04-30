@@ -26,10 +26,8 @@ from pytgcalls.types import Update
 keyboard = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(text="🐬Mᴇɴᴜ", callback_data="stream_menu_panel"),
-            InlineKeyboardButton(text="✨Gʀᴏᴜᴘ", url=f"https://t.me/{GROUP_SUPPORT}"),
-        ],[
             InlineKeyboardButton(text="**❣️ Oᴡɴᴇʀ**", url=f"https://t.me/itz_rupu"),
+            InlineKeyboardButton(text="✨Gʀᴏᴜᴘ", url=f"https://t.me/{GROUP_SUPPORT}"),
         ]
     ]
 )
