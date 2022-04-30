@@ -150,11 +150,11 @@ async def mute(client, m: Message):
     if chat_id in QUEUE:
         try:
             if not await is_music_playing(chat_id):
-                return await m.reply_text("ℹ️ The stream userbot is already muted.")
+                return await m.reply_text("😶ᴀssɪsᴛᴀɴᴛ ᴀʟʀᴇᴀᴅʏ ᴍᴜᴛᴇᴅ ..")
             await calls.mute_stream(chat_id)
             await music_off(chat_id)
             await m.reply_text(
-                "🔇 **Userbot muted.**\n\n• **To unmute the userbot, use the**\n» /unmute command."
+                "🔇 **ᴀssɪsᴛᴀɴᴛ ᴜɴᴍᴜᴛᴇᴅ** !"
             )
         except Exception as e:
             traceback.print_exc()
@@ -173,11 +173,10 @@ async def unmute(client, m: Message):
     if chat_id in QUEUE:
         try:
             if await is_music_playing(chat_id):
-                return await m.reply_text("ℹ️ The stream userbot is already unmuted.")
+                return await m.reply_text("🙏 ᴛʜᴇ sᴛʀᴇᴀᴍ ᴀʟʀᴇᴀᴅʏ ᴜɴᴍᴜᴛᴇᴅ.")
             await calls.unmute_stream(chat_id)
             await music_on(chat_id)
-            await m.reply_text(
-                "🔊 **Userbot unmuted.**\n\n• **To mute the userbot, use the**\n» /mute command."
+            await m.reply_text("🔊 **ᴀssɪsᴛᴀɴᴛ ᴜɴᴍᴜᴛᴇᴅ**."
             )
         except Exception as e:
             traceback.print_exc()
