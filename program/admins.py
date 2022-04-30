@@ -1,21 +1,3 @@
-"""
-Video + Music Stream Telegram Bot
-Copyright (c) 2022-present levina=lab <https://github.com/levina-lab>
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but without any warranty; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program. If not, see <https://www.gnu.org/licenses/licenses.html>
-"""
-
 
 import traceback
 
@@ -56,7 +38,7 @@ async def update_admin(client, message: Message):
         new_admins.append(u.user.id)
     admins[message.chat.id] = new_admins
     await message.reply_text(
-        "✅ Bot **reloaded** correctly!\n✅ The **Admin list** has **updated.**"
+        "✅ ʙᴏᴛ ʀᴇʟᴏᴀᴅᴇᴅ..**ᴀᴅᴍɪɴʟɪsᴛ ᴜᴘᴅᴀᴛᴇᴅ**"
     )
 
 
@@ -73,12 +55,12 @@ async def stop(client, m: Message):
             await calls.leave_group_call(chat_id)
             await remove_active_chat(chat_id)
             clear_queue(chat_id)
-            await m.reply_text("✅ The userbot has disconnected from the video chat.")
+            await m.reply_text("ᴍᴜsɪᴄ sᴛᴏᴘᴘᴇᴅ❗😇.")
         except Exception as e:
             traceback.print_exc()
-            await m.reply_text(f"🚫 **error:**\n\n`{e}`")
+            await m.reply_text(f"⭕ **ᴇʀʀᴏʀ:**\n\n`{e}`")
     else:
-        await m.reply_text("❌ **nothing is streaming**")
+        await m.reply_text("❌ **ɴᴏᴛʜɪɴɢ ɪs ᴘʟᴀʏɪɴɢ**")
 
 
 @Client.on_message(
@@ -91,17 +73,17 @@ async def pause(client, m: Message):
     if chat_id in QUEUE:
         try:
             if not await is_music_playing(chat_id):
-                return await m.reply_text("ℹ️ The music is already paused.")
+                return await m.reply_text("🥴ᴍᴜsɪᴄ ᴀʟʀᴇᴀᴅʏ ᴘᴀᴜsᴇᴅ")
             await calls.pause_stream(chat_id)
             await music_off(chat_id)
             await m.reply_text(
-                "⏸ **Track paused.**\n\n• **To resume the stream, use the**\n» /resume command."
+                "⏸ **ᴍᴜsɪᴄ ᴘᴀᴜsᴇᴅ**."
             )
         except Exception as e:
             traceback.print_exc()
-            await m.reply_text(f"🚫 **error:**\n\n`{e}`")
+            await m.reply_text(f"⭕ **ᴇʀʀᴏʀ:**\n\n`{e}`")
     else:
-        await m.reply_text("❌ **nothing is streaming**")
+        await m.reply_text("❌ **ɴᴏᴛʜɪɴɢ ɪs ᴘʟᴀʏɪɴɢ**")
 
 
 @Client.on_message(
@@ -114,17 +96,17 @@ async def resume(client, m: Message):
     if chat_id in QUEUE:
         try:
             if await is_music_playing(chat_id):
-                return await m.reply_text("ℹ️ The music is already resumed.")
+                return await m.reply_text("👉 ᴍᴜsɪᴄ ᴀʟʀᴇᴀᴅʏ ʀᴇsᴜᴍᴇᴅ")
             await calls.resume_stream(chat_id)
             await music_on(chat_id)
             await m.reply_text(
-                "▶️ **Track resumed.**\n\n• **To pause the stream, use the**\n» /pause command."
+                "**🎵 ᴍᴜsɪᴄ ʀᴇsᴜᴍᴇᴅ**."
             )
         except Exception as e:
             traceback.print_exc()
-            await m.reply_text(f"🚫 **error:**\n\n`{e}`")
+            await m.reply_text(f"⭕ **ᴇʀʀᴏʀ:**\n\n`{e}`")
     else:
-        await m.reply_text("❌ **nothing is streaming**")
+        await m.reply_text("❌ **ɴᴏᴛʜɪɴɢ ɪs ᴘʟᴀʏɪɴɢ**")
 
 
 @Client.on_message(command(["skip", f"skip@{BOT_USERNAME}", "vskip"]) & other_filters)
@@ -135,11 +117,11 @@ async def skip(c: Client, m: Message):
     chat_id = m.chat.id
     queue = await skip_current_song(chat_id)
     if queue == 0:
-        await m.reply_text("❌ nothing is currently playing")
+        await m.reply_text("❌ ɴᴏᴛʜɪɴɢ ɪs ᴘʟᴀʏɪɴɢ")
     elif queue == 1:
-        await m.reply_text("» There's no more music in queue to skip, userbot leaving video chat.")
+        await m.reply_text("» ɴᴏ ᴀɴʏ sᴏɴɢ ᴛᴏ sᴋɪᴘ ᴅᴇᴀʀ😙")
     elif queue == 2:
-        await m.reply_text("🗑️ Clearing the **queues**\n\n» **userbot** leaving video chat.")
+        await m.reply_text("🗑️ ᴄʟᴇᴀʀɪɴɢ ǫᴜᴇᴜᴇ...ᴀssɪsᴛᴀɴᴛ ʟᴇᴀᴠᴇ ᴠᴄ")
     else:
         buttons = stream_markup(user_id)
         requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
@@ -153,7 +135,7 @@ async def skip(c: Client, m: Message):
             chat_id,
             photo=image,
             reply_markup=InlineKeyboardMarkup(buttons),
-            caption=f"⏭ **Skipped** to the next track.\n\n🗂 **Name:** [{queue[0]}]({queue[1]})\n💭 **Chat:** `{chat_id}`\n🧸 **Request by:** {requester}",
+            caption=f"⏭ **sᴋɪᴘᴘᴇᴅ** ᴛᴏ ɴᴇxᴛ sᴏɴɢ.\n\n🏷️ **ɴᴀᴍᴇ:** [{queue[0]}]({queue[1]})\n⏱️ **ᴅᴜʀᴀᴛɪᴏᴍ:** `{duration}`\n🎧 **ᴜsᴇʀ ʙʏ:** {requester}",
         )
         remove_if_exists(image)
 
@@ -176,9 +158,9 @@ async def mute(client, m: Message):
             )
         except Exception as e:
             traceback.print_exc()
-            await m.reply_text(f"🚫 **error:**\n\n`{e}`")
+            await m.reply_text(f"⭕ **ᴇʀʀᴏʀ:**\n\n`{e}`")
     else:
-        await m.reply_text("❌ **nothing is streaming**")
+        await m.reply_text("❌ **ɴᴏᴛʜɪɴɢ ɪs ᴘʟᴀʏɪɴɢ**")
 
 
 @Client.on_message(
@@ -199,9 +181,9 @@ async def unmute(client, m: Message):
             )
         except Exception as e:
             traceback.print_exc()
-            await m.reply_text(f"🚫 **error:**\n\n`{e}`")
+            await m.reply_text(f"⭕ **ᴇʀʀᴏʀ:**\n\n`{e}`")
     else:
-        await m.reply_text("❌ **nothing is streaming**")
+        await m.reply_text("❌ **ɴᴏᴛʜɪɴɢ ɪs ᴘʟᴀʏɪɴɢ**")
 
 
 @Client.on_message(
@@ -215,7 +197,7 @@ async def change_volume(c: Client, m: Message):
     a = await c.get_chat_member(m.chat.id, me_user.id)
     if not a.can_manage_voice_chats:
         return await m.reply_text(
-            "The userbot must be admin in this chat to be able change the volume stream!"
+            "ᴍᴀᴋᴇ ᴀssɪsᴛᴀɴᴛ ᴀᴅᴍɪɴ ғɪʀsᴛ ᴛᴏ sᴇᴛ ᴠᴏʟᴜᴍᴇ!"
         )
     range = m.command[1]
     chat_id = m.chat.id
@@ -223,13 +205,13 @@ async def change_volume(c: Client, m: Message):
         try:
             await calls.change_volume_call(chat_id, volume=int(range))
             await m.reply_text(
-                f"✅ **volume set to** `{range}`%"
+                f"✅ **ᴠᴏʟ sᴇᴛ ᴛᴏ** `{range}`%"
             )
         except Exception as e:
             traceback.print_exc()
-            await m.reply_text(f"🚫 **error:**\n\n`{e}`")
+            await m.reply_text(f"⭕ **ᴇʀʀᴏʀ:**\n\n`{e}`")
     else:
-        await m.reply_text("❌ **nothing is streaming**")
+        await m.reply_text("❌ **ɴᴏᴛʜɪɴɢ ɪs ᴘʟᴀʏɪɴɢ**")
 
 
 @Client.on_callback_query(filters.regex("set_pause"))
@@ -237,21 +219,21 @@ async def change_volume(c: Client, m: Message):
 async def cbpause(_, query: CallbackQuery):
     a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
     if not a.can_manage_voice_chats:
-        return await query.answer("💡 Only admin with manage video chat permission that can tap this button !", show_alert=True)
+        return await query.answer("💫 ᴀᴅᴍɪɴ ᴡɪᴛʜ ᴠᴄ ʀɪɢʜᴛ ᴜsᴇ ᴛʜɪs ʙᴜᴛᴛᴏɴ !", show_alert=True)
     chat_id = query.message.chat.id
     if chat_id in QUEUE:
         try:
             if not await is_music_playing(chat_id):
-                await query.answer("ℹ️ The music is already paused.", show_alert=True)
+                await query.answer("🥴ᴍᴜsɪᴄ ᴀʟʀᴇᴀᴅʏ ᴘᴀᴜsᴇᴅ.", show_alert=True)
                 return
             await calls.pause_stream(chat_id)
             await music_off(chat_id)
-            await query.answer("⏸ The music has paused !\n\n» to resume the music click on resume button !", show_alert=True)
+            await query.answer("⏸ ᴍᴜsɪᴄ ᴘᴀᴜsᴇᴅ !", show_alert=True)
         except Exception as e:
             traceback.print_exc()
-            await query.edit_message_text(f"🚫 **error:**\n\n`{e}`", reply_markup=close_mark)
+            await query.edit_message_text(f"⭕ **ᴇʀʀᴏʀ:**\n\n`{e}`", reply_markup=close_mark)
     else:
-        await query.answer("❌ nothing is currently streaming", show_alert=True)
+        await query.answer("❌ ɴᴏᴛʜɪɴɢ ɪs ᴘʟᴀʏɪɴɢ", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("set_resume"))
@@ -259,21 +241,21 @@ async def cbpause(_, query: CallbackQuery):
 async def cbresume(_, query: CallbackQuery):
     a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
     if not a.can_manage_voice_chats:
-        return await query.answer("💡 Only admin with manage video chat permission that can tap this button !", show_alert=True)
+        return await query.answer("💫 ᴀᴅᴍɪɴ ᴡɪᴛʜ ᴠᴄ ʀɪɢʜᴛ ᴜsᴇ ᴛʜɪs ʙᴜᴛᴛᴏɴ !", show_alert=True)
     chat_id = query.message.chat.id
     if chat_id in QUEUE:
         try:
             if await is_music_playing(chat_id):
-                await query.answer("ℹ️ The music is already resumed.", show_alert=True)
+                await query.answer("👉 ᴍᴜsɪᴄ ᴀʟʀᴇᴀᴅʏ ʀᴇsᴜᴍᴇᴅ.", show_alert=True)
                 return
             await calls.resume_stream(chat_id)
             await music_on(chat_id)
-            await query.answer("▶️ The music has resumed !\n\n» to pause the music click on pause button !", show_alert=True)
+            await query.answer("🎵 ᴍᴜsɪᴄ ʀᴇsᴜᴍᴇᴅ !", show_alert=True)
         except Exception as e:
             traceback.print_exc()
-            await query.edit_message_text(f"🚫 **error:**\n\n`{e}`", reply_markup=close_mark)
+            await query.edit_message_text(f"⭕ **ᴇʀʀᴏʀ:**\n\n`{e}`", reply_markup=close_mark)
     else:
-        await query.answer("❌ nothing is currently streaming", show_alert=True)
+        await query.answer("❌ ɴᴏᴛʜɪɴɢ ɪs ᴘʟᴀʏɪɴɢ", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("set_stop"))
@@ -281,19 +263,19 @@ async def cbresume(_, query: CallbackQuery):
 async def cbstop(_, query: CallbackQuery):
     a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
     if not a.can_manage_voice_chats:
-        return await query.answer("💡 Only admin with manage video chat permission that can tap this button !", show_alert=True)
+        return await query.answer("💫 ᴀᴅᴍɪɴ ᴡɪᴛʜ ᴠᴄ ʀɪɢʜᴛ ᴜsᴇ ᴛʜɪs ʙᴜᴛᴛᴏɴ !", show_alert=True)
     chat_id = query.message.chat.id
     if chat_id in QUEUE:
         try:
             await calls.leave_group_call(chat_id)
             await remove_active_chat(chat_id)
             clear_queue(chat_id)
-            await query.edit_message_text("✅ The userbot has disconnected from the video chat.", reply_markup=close_mark)
+            await query.edit_message_text("ᴍᴜsɪᴄ sᴛᴏᴘᴘᴇᴅ❗😇.", reply_markup=close_mark)
         except Exception as e:
             traceback.print_exc()
-            await query.edit_message_text(f"🚫 **error:**\n\n`{e}`", reply_markup=close_mark)
+            await query.edit_message_text(f"⭕ **ᴇʀʀᴏʀ:**\n\n`{e}`", reply_markup=close_mark)
     else:
-        await query.answer("❌ nothing is currently streaming", show_alert=True)
+        await query.answer("❌ ɴᴏᴛʜɪɴɢ ɪs ᴘʟᴀʏɪɴɢ", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("set_mute"))
@@ -301,21 +283,21 @@ async def cbstop(_, query: CallbackQuery):
 async def cbmute(_, query: CallbackQuery):
     a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
     if not a.can_manage_voice_chats:
-        return await query.answer("💡 Only admin with manage video chat permission that can tap this button !", show_alert=True)
+        return await query.answer("💫 ᴀᴅᴍɪɴ ᴡɪᴛʜ ᴠᴄ ʀɪɢʜᴛ ᴜsᴇ ᴛʜɪs ʙᴜᴛᴛᴏɴ !", show_alert=True)
     chat_id = query.message.chat.id
     if chat_id in QUEUE:
         try:
             if not await is_music_playing(chat_id):
-                await query.answer("ℹ️ The stream userbot is already muted.", show_alert=True)
+                await query.answer("😶ᴀssɪsᴛᴀɴᴛ ᴀʟʀᴇᴀᴅʏ ᴍᴜᴛᴇᴅ ..", show_alert=True)
                 return
             await calls.mute_stream(chat_id)
             await music_off(chat_id)
-            await query.answer("🔇 The stream userbot has muted !\n\n» to unmute the userbot click on unmute button !", show_alert=True)
+            await query.answer("🔇 ᴀssɪsᴛᴀɴᴛ ᴜɴᴍᴜᴛᴇᴅ !", show_alert=True)
         except Exception as e:
             traceback.print_exc()
-            await query.edit_message_text(f"🚫 **error:**\n\n`{e}`", reply_markup=close_mark)
+            await query.edit_message_text(f"⭕ **ᴇʀʀᴏʀ:**\n\n`{e}`", reply_markup=close_mark)
     else:
-        await query.answer("❌ nothing is currently streaming", show_alert=True)
+        await query.answer("❌ ɴᴏᴛʜɪɴɢ ɪs ᴘʟᴀʏɪɴɢ", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("set_unmute"))
@@ -323,21 +305,21 @@ async def cbmute(_, query: CallbackQuery):
 async def cbunmute(_, query: CallbackQuery):
     a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
     if not a.can_manage_voice_chats:
-        return await query.answer("💡 Only admin with manage video chat permission that can tap this button !", show_alert=True)
+        return await query.answer("💫 ᴀᴅᴍɪɴ ᴡɪᴛʜ ᴠᴄ ʀɪɢʜᴛ ᴜsᴇ ᴛʜɪs ʙᴜᴛᴛᴏɴ !", show_alert=True)
     chat_id = query.message.chat.id
     if chat_id in QUEUE:
         try:
             if await is_music_playing(chat_id):
-                await query.answer("ℹ️ The stream userbot is already unmuted.", show_alert=True)
+                await query.answer("🙏 ᴛʜᴇ sᴛʀᴇᴀᴍ ᴀʟʀᴇᴀᴅʏ ᴜɴᴍᴜᴛᴇᴅ.", show_alert=True)
                 return
             await calls.unmute_stream(chat_id)
             await music_on(chat_id)
-            await query.answer("🔊 The stream userbot has unmuted !\n\n» to mute the userbot click on mute button !", show_alert=True)
+            await query.answer("🔊 **ᴀssɪsᴛᴀɴᴛ ᴜɴᴍᴜᴛᴇᴅ**!", show_alert=True)
         except Exception as e:
             traceback.print_exc()
-            await query.edit_message_text(f"🚫 **error:**\n\n`{e}`", reply_markup=close_mark)
+            await query.edit_message_text(f"⭕ **ᴇʀʀᴏʀ:**\n\n`{e}`", reply_markup=close_mark)
     else:
-        await query.answer("❌ nothing is currently streaming", show_alert=True)
+        await query.answer("❌ ɴᴏᴛʜɪɴɢ ɪs ᴘʟᴀʏɪɴɢ", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("set_skip"))
@@ -345,16 +327,16 @@ async def cbunmute(_, query: CallbackQuery):
 async def cbskip(_, query: CallbackQuery):
     a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
     if not a.can_manage_voice_chats:
-        return await query.answer("💡 Only admin with manage video chat permission that can tap this button !", show_alert=True)
+        return await query.answer("💫 ᴀᴅᴍɪɴ ᴡɪᴛʜ ᴠᴄ ʀɪɢʜᴛ ᴜsᴇ ᴛʜɪs ʙᴜᴛᴛᴏɴ!", show_alert=True)
     chat_id = query.message.chat.id
     user_id = query.from_user.id
     queue = await skip_current_song(chat_id)
     if queue == 0:
-        await query.answer("❌ nothing is currently playing", show_alert=True)
+        await query.answer("❌ ɴᴏᴛʜɪɴʜ ɪs ᴘʟᴀʏɪɴɢ", show_alert=True)
     elif queue == 1:
-        await query.answer("» There's no more music in queue to skip, userbot leaving video chat.", show_alert=True)
+        await query.answer("» ɴᴏ ᴀɴʏ sᴏɴɢ ᴛᴏ sᴋɪᴘ ᴅᴇᴀʀ😙.", show_alert=True)
     elif queue == 2:
-        await query.answer("🗑️ Clearing the **queues**\n\n» **userbot** leaving video chat.", show_alert=True)
+        await query.answer("🗑️ ᴄʟᴇᴀʀɪɴɢ ǫᴜᴇᴜᴇ...ᴀssɪsᴛᴀɴᴛ ʟᴇᴀᴠᴇ ᴠᴄ.", show_alert=True)
     else:
         await query.answer("goes to the next track, proccessing...")
         await query.message.delete()
@@ -370,6 +352,6 @@ async def cbskip(_, query: CallbackQuery):
             chat_id,
             photo=image,
             reply_markup=InlineKeyboardMarkup(buttons),
-            caption=f"⏭ **Skipped** to the next track.\n\n🗂 **Name:** [{queue[0]}]({queue[1]})\n💭 **Chat:** `{chat_id}`\n🧸 **Request by:** {requester}",
+            caption=f"⏭ **sᴋɪᴘᴘᴇᴅ** ᴛᴏ ɴᴇxᴛ.sᴏɴɢ.\n\n🏷️ **ɴᴀᴍᴇ:** [{queue[0]}]({queue[1]})\n⏱️ **ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}`\n🎧 **ᴜsᴇʀ ʙʏ:** {requester}",
         )
         remove_if_exists(image)
