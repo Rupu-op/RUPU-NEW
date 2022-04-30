@@ -32,9 +32,6 @@ root@linux~ $ cp example.env .env
 root@linux~ $ python3 main.py
 ```
 
-</details>
-
-
 ## License
 
 Distributed under the [GNU General Public License v3.0 License](https://github.com/RUPU-OP/FIRE/blob/main/LICENSE) See `LICENSE.md` for more information.
