@@ -2,18 +2,17 @@ from datetime import datetime
 from sys import version_info
 from time import time
 
-from Noinoi.config import (
+from config import (
     ALIVE_IMG,
     ALIVE_NAME,
-    BOT_NAME,
     BOT_USERNAME,
     GROUP_SUPPORT,
     OWNER_NAME,
     UPDATES_CHANNEL,
 )
-from Noinoi.PLUGINS import __version__
-from Noinoi.DREAMS.cfc import user
-from Noinoi.DREAMS.filters import command, other_filters
+from program import __version__
+from driver.core import user
+from driver.filters import command, other_filters
 from pyrogram import Client, filters
 from pyrogram import __version__ as pyrover
 from pytgcalls import (__version__ as pytover)
@@ -95,7 +94,7 @@ async def alive(client: Client, message: Message):
         ]
     )
 
-    alive = f"**Hello {message.from_user.mention()}, i'm {BOT_NAME}**\n\n✨ Bot is working normally\n🍀 My Master: [{ALIVE_NAME}](https://t.me/{OWNER_NAME})\n✨ Bot Version: `v{__version__}`\n🍀 Pyrogram Version: `{pyrover}`\n✨ Python Version: `{__python_version__}`\n🍀 PyTgCalls version: `{pytover.__version__}`\n✨ Uptime Status: `{uptime}`\n\n**Thanks for Adding me here, for playing video & music on your Group's video chat** ❤"
+    alive = f"**ʜᴇʟʟᴏ {message.from_user.mention()}, ɪᴍ {me_bot.first_name}**\n\n✨ ʙᴏᴛ ʀᴜɴɴɪɴɢ ᴀғғɪᴄɪᴇɴᴛʟʏ\n❣️ ᴍʏ ᴅᴇᴀʀ ᴏᴡɴᴇʀ: [{ALIVE_NAME}](https://t.me/{OWNER_NAME})\n✨ ʙᴏᴛ ᴠᴇʀ: `v{__version__}`\n🍀 ᴘʏʀᴏɢʀᴀᴍ ᴠᴇʀ: `{pyrover}`\n✨ ᴘʏᴛʜᴏɴ ᴠᴇʀ: `{__python_version__}`\n🍀 ᴘʏᴛɢᴄᴀʟʟs ᴠᴇʀ: `{pytover.__version__}`\n✨ ᴜᴘᴛɪᴍᴇ: `{uptime}`\n\n**pᴛʜᴀɴᴋʏᴏᴜ** ❤"
 
     await message.reply_photo(
         photo=f"{ALIVE_IMG}",
