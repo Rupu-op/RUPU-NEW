@@ -35,13 +35,13 @@ from pyrogram.types import Message
 @Client.on_message(command(["speedtest", f"speedtest@{bname}"]) & ~filters.edited)
 @sudo_users_only
 async def run_speedtest(_, message: Message):
-    m = await message.reply_text("⚡️ running server speedtest")
+    m = await message.reply_text("⚡️ ʀᴜɴɴɪɴɢ sᴇʀᴠᴇʀ sᴘᴇᴇᴅᴛᴇsᴛ...")
     try:
         test = speedtest.Speedtest()
         test.get_best_server()
-        m = await m.edit("⚡️ running download speedtest..")
+        m = await m.edit("⚡️ ʀᴜɴɴɪɴɢ ᴅᴏᴡɴʟᴏᴀᴅ sᴘᴇᴇᴅ ᴛᴇsᴛ...")
         test.download()
-        m = await m.edit("⚡️ running upload speedtest...")
+        m = await m.edit("⚡️ ʀᴜɴɴɪɴɢ ᴜᴘʟᴏᴀᴅ sᴘᴇᴇᴅ ᴛᴇsᴛ...")
         test.upload()
         test.results.share()
     except speedtest.ShareResultsConnectFailure:
@@ -50,7 +50,7 @@ async def run_speedtest(_, message: Message):
         await m.edit(e)
         return
     result = test.results.dict()
-    m = await m.edit("🔄 sharing speedtest results")
+    m = await m.edit("⭐ sʜᴀʀɪɴɢ ʙᴏᴛ sᴘᴇᴇᴅ")
     if result["share"]:
         path = wget.download(result["share"])
         try:
@@ -60,7 +60,7 @@ async def run_speedtest(_, message: Message):
         except BaseException:
             pass
 
-    output = f"""💡 **SpeedTest Results**
+    output = f"""💤 **ʀᴇsᴜʟᴛs**
     
 <u>**Client:**</u>
 **ISP:** {result['client']['isp']}
@@ -72,7 +72,7 @@ async def run_speedtest(_, message: Message):
 **Sponsor:** {result['server']['sponsor']}
 **Latency:** {result['server']['latency']}
 
-⚡️ **:** {result['ping']}"""
+⚡️ **ᴘɪɴɢ:** {result['ping']}"""
     if result["share"]:
         msg = await app.send_photo(
             chat_id=message.chat.id, photo=path, caption=output
