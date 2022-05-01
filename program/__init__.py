@@ -1,4 +1,4 @@
-__version__ = "0.2.0
+__version__ = "0.2.0"
 # >>> patch : F.11.22
 
 import time
