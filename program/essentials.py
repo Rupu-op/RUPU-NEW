@@ -23,6 +23,7 @@ import traceback
 from pyrogram.types import Message
 from pyrogram import Client, filters, __version__ as pyrover
 from pytgcalls import (__version__ as pytgver)
+from python import (__version__ as pyver)
 
 from program import __version__ as ver
 from program.start import __python_version__ as pyver
