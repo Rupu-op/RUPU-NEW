@@ -36,38 +36,33 @@ async def _human_time_duration(seconds):
 async def start_(client: Client, message: Message):
     await message.reply_photo(
         photo=f"{START_PIC}",
-        caption=f"""A Telegram Music Bot Based PyroGram.
+        caption=f"""✌️ɪᴍ ʟᴀᴢʏ ᴀʙᴏᴜᴛ ᴛʏᴘɪɴɢ ᴀɴʏᴛʜɪɴɢ ɪᴛs ᴀ ᴍᴜsɪᴄ ʙᴏᴛ ʜᴀᴠᴇ ᴍᴀɴʏ ғᴇᴀᴛᴜʀᴇs.
 
-💫 **Main Features**
-~  Audio + Video Stream
-~ YouTube/Local/Live/m3u8 stream support
-~ Voice Raid / Video Raid
-~ Spam, Bigspam, Raid and LoveRaid
-~ Audio And Video Download from YouTube
+💫 **ᴍᴀɪɴ ғᴇᴀᴛᴜʀᴇs**
+~  ᴀᴜᴅɪᴏ /ᴠɪᴅᴇᴏ ᴘʟᴀʏ
+~ YouTube/Local/Live/m3u8 sᴜᴘᴘᴏʀᴛs
+~ ᴅᴏᴡɴʟᴏᴀᴅ ᴀᴜᴅɪᴏ ᴠɪᴅᴇᴏ ғʀᴏᴍ ʏᴏᴜᴛᴜʙᴇ
 
-Powered By [](t.me/superior_bots) ...
+ᴄʀᴇᴀᴛᴇᴅ ʙʏ[s•4•sʜɪᴠ](t.me/shivamdemon)...
 """,
     reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "➕ ❰ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ❱ ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
+                        "➕ ɢᴇᴛ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴘ ʙᴀʙʏ🤭", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅꜱ", url=f"https://t.me/SUPERIOR_BOTS/160"
-                    ),
-                    InlineKeyboardButton(
-                        "ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", url="https://github.com/ITZ-ZAID/Zaid-Vc-Player"
+                        "❣️ ᴏᴡɴᴇʀ", url=f"https://t.me/itz_rupu"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "📢 ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"
+                        "🐬 ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅs", url=f"https://t.me/{UPDATES_CHANNEL}"
                     ),
                     InlineKeyboardButton(
-                        "ꜱᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ 🇮🇳", url=f"https://t.me/{GROUP_SUPPORT}"
+                        "💫 ɢʀᴏᴜᴘ", url=f"https://t.me/{GROUP_SUPPORT}"
                     )
                 ]
                 
@@ -80,7 +75,7 @@ Powered By [](t.me/superior_bots) ...
 async def start(client: Client, message: Message):
     await message.reply_photo(
         photo=f"{ALIVE_IMG}",
-        caption=f"""Thanks For Adding Me To Ur Chat, For Any Query U Can Join Our Support Groups 🔥♥️""",
+        caption=f"""ᴛʜᴀɴᴋs ғᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 🔥♥️""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
