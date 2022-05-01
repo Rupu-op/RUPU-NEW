@@ -16,7 +16,6 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/licenses.html>
 """
 
-
 from driver.core import me_bot, me_user
 from driver.queues import QUEUE
 from driver.decorators import check_blacklist
@@ -38,24 +37,26 @@ from config import (
 @check_blacklist()
 async def start_set(_, query: CallbackQuery):
     await query.answer("home start")
-    await query.edit_message_sticker("CAADBQAD-QQAAhCWOFRERrHKHtIUvgI") 
     await query.edit_message_text(
-        f"""ʜᴇʏ {message.from_user.mention()} 👋🏻\n
-💫 ɪᴛs {me_bot.first_name}...I ᴀᴍ ʟᴀᴢʏ Aʙᴏᴜᴛ ᴛʏᴘɪɴɢ sᴏᴍᴇᴛʜɪɴɢ ɴᴇᴡ..ɪᴛᴢ ᴀ ʙᴏᴛ ᴍᴀᴅᴇ ғᴏʀ ᴘʟᴀʏ ᴍᴜsɪᴄ ɪɴ Vᴄ.😈❣️
-
-⚙️ᴄʜᴇᴄᴋ ᴏᴜᴛ ɪᴛs ᴄᴏᴍᴍᴀɴᴅ ʙʏ ʙᴜᴛᴛᴏɴ ɢɪᴠᴇɴ ʙᴇʟᴏᴡ
+        f"""Hi [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) 👋🏻\n
+💭 [{me_bot.first_name}](https://t.me/{me_bot.username}) is a bot to play music and video in groups, through the new Telegram video chats.
+🕵🏻 Check out all the **Bot's commands** and how they work by clicking on the » 📚 **Commands** button!
+🧑🏻‍💻 To know how to use this bot, please click on the » ❓ **Basic Guide** button!
 """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💞**Oᴡɴᴇʀ**", url=f"https://t.me/itz_rupu")
+                    InlineKeyboardButton("➕ Add me to a Group ➕", url=f"https://t.me/{me_bot.username}?startgroup=true")
                 ],[
-                    InlineKeyboardButton("⚙️ ᴄᴏᴍᴍᴀɴᴅs", callback_data="command_list"),
+                    InlineKeyboardButton("❓ Basic Guide", callback_data="user_guide")
                 ],[
-                    InlineKeyboardButton("🐬 ɢʀᴏᴜᴘ", url=f"https://t.me/{GROUP_SUPPORT}"),
-                    InlineKeyboardButton("💫 ᴀɴʏ ᴘʀᴏʙʟᴇᴍ ", url=f"https://t.me/{UPDATES_CHANNEL}")
+                    InlineKeyboardButton("📚 Commands", callback_data="command_list"),
+                    InlineKeyboardButton("❤️ Donate", url=f"https://t.me/{OWNER_USERNAME}")
                 ],[
-                    InlineKeyboardButton(" ɢᴇᴛ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴅᴀʀʟɪɴɢ🤭", url=f"https://t.me/{me_bot.username}?startgroup=true")
+                    InlineKeyboardButton("👥 Support Group", url=f"https://t.me/{GROUP_SUPPORT}"),
+                    InlineKeyboardButton("📣 Support Channel", url=f"https://t.me/{UPDATES_CHANNEL}")
+                ],[
+                    InlineKeyboardButton("🌐 Source Code", url="https://github.com/levina-lab/video-stream")
                 ],
             ]
         ),
