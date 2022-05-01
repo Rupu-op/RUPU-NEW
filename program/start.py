@@ -2,7 +2,7 @@ import asyncio
 from time import time
 from datetime import datetime
 from config import BOT_USERNAME
-from config import GROUP_SUPPORT, ALIVE_IMG,START_PIC
+from config import GROUP_SUPPORT,ALIVE_IMG,START_PIC
 from driver.filters import command
 from driver.command import commandpro
 from pyrogram import filters
