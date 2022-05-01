@@ -35,7 +35,7 @@ async def inline(client: Client, query: InlineQuery):
         await client.answer_inline_query(
             query.id,
             results=answers,
-            switch_pm_text=" s   s",
+            switch_pm_text="ᴛʏᴘᴇ sᴏɴɢ ɴᴀᴍᴇ ᴛᴏ sᴇᴀʀᴄʜ",
             switch_pm_parameter="help",
             cache_time=0,
         )
@@ -62,6 +62,6 @@ async def inline(client: Client, query: InlineQuery):
             await query.answer(
                 results=answers,
                 cache_time=0,
-                switch_pm_text="  :Search timout ",
+                switch_pm_text="⭕ᴇʀʀᴏʀ :Search timout ",
                 switch_pm_parameter="",
             )
