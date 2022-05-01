@@ -58,11 +58,11 @@ async def broadcast_message_nopin(c: Client, message: Message):
                 sent += 1
             except Exception:
                 pass
-        await message.reply_text(f"✅ Broadcast complete in {sent} Group.")
+        await message.reply_text(f"✅ 𝙱𝚁𝙾𝙰𝙳𝙲𝙰𝚂𝚃𝙴𝙳 𝙸𝙽  {sent} 𝙶𝚁𝙾𝚄𝙿.")
         return
     if len(message.command) < 2:
         await message.reply_text(
-            "**s**:\n\n/broadcast (`message`) or (`reply to message`)"
+            "**𝚄𝚂𝙰𝙶𝙴**:\n\n/broadcast (`message`) or (`reply to message`)"
         )
         return
     text = message.text.split(None, 1)[1]
@@ -78,7 +78,7 @@ async def broadcast_message_nopin(c: Client, message: Message):
             sent += 1
         except Exception:
             pass
-    await message.reply_text(f"✅ s   {sent} s.")
+    await message.reply_text(f"✅ 𝙱𝚁𝙾𝙰𝙳𝙲𝙰𝚂𝚃𝙴𝙳 𝙸𝙽 {sent} 𝙶𝚁𝙾𝚄𝙿𝚂.")
 
 
 @Client.on_message(command(["broadcast_pin", f"broadcast_pin@{uname}"]) & ~filters.edited)
@@ -108,7 +108,7 @@ async def broadcast_message_pin(c: Client, message: Message):
             except Exception:
                 pass
         await message.reply_text(
-            f"✅ s   {sent} s.\n📌 s  {pin}  s."
+            f"✅ 𝙱𝚁𝙾𝙰𝙳𝙲𝙰𝚂𝚃𝙴𝙳 𝙸𝙽 {sent} 𝙶𝚁𝙾𝚄𝙿𝚂.\n📌 𝚂𝙴𝙽𝙳 𝚆𝙸𝚃𝙷 {pin} 𝙲𝙷𝙰𝚃 𝙿𝙸𝙽𝚂."
         )
         return
     if len(message.command) < 2:
@@ -136,7 +136,7 @@ async def broadcast_message_pin(c: Client, message: Message):
         except Exception:
             pass
     await message.reply_text(
-        f"✅ s   {sent} s.\n📌 s  {pin}  s."
+        f"✅ 𝙱𝚁𝙾𝙰𝙳𝙲𝙰𝚂𝚃𝙴𝙳 𝙸𝙽  {sent} 𝙶𝚁𝙾𝚄𝙿𝚂.\n📌 𝚂𝙴𝙽𝙳 𝚆𝙸𝚃𝙷 {pin} 𝙲𝙷𝙰𝚃 𝙿𝙸𝙽𝚂."
     )
 
 
@@ -146,23 +146,23 @@ async def bot_statistic(c: Client, message: Message):
     name = me_bot.first_name
     chat_id = message.chat.id
     msg = await c.send_message(
-        chat_id, "❖  ss..."
+        chat_id, "❖ 𝙲𝙾𝙻𝙻𝙴𝙲𝚃𝙸𝙽𝙶 𝚂𝚃𝙰𝚃𝚂..."
     )
     served_chats = len(await get_served_chats())
     served_users = len(await get_served_users())
     gbans_usertl = await get_gbans_count()
     tgm = f"""
-📊  ss  [{name}](https://t.me/{uname})`:`
+📊 𝙲𝚄𝚁𝚁𝙴𝙽𝚃 𝚂𝚃𝙰𝚃𝚂 𝙸𝚂 [{name}](https://t.me/{uname})`:`
 
-➥ ** s** : `{served_chats}`
-➥ **ss** : `{served_users}`
-➥ ** ss** : `{gbans_usertl}`
+➥ **𝙶𝚁𝙾𝚄𝙿 𝙲𝙷𝙰𝚃𝚂** : `{served_chats}`
+➥ **𝚄𝚂𝙴𝚁𝚂** : `{served_users}`
+➥ **𝙶𝙱𝙰𝙼𝙼𝙴𝙳 𝚄𝚂𝙴𝚁𝚂** : `{gbans_usertl}`
 
-➛ ** s** : `{pyver}`
-➛ **s s** : `{pytgver.__version__}`
-➛ ** s** : `{pyrover}`
+➛ **𝙿𝚈𝚃𝙷𝙾𝙽 𝚅𝙴𝚁** : `{pyver}`
+➛ **𝙿𝙶𝚃𝚈𝙲𝙰𝙻𝙻𝚂 𝚅𝙴𝚁** : `{pytgver.__version__}`
+➛ **𝙿𝚈𝚁𝙾𝙶𝚁𝙰𝙼 𝚅𝙴𝚁** : `{pyrover}`
 
-🤖  s: `{ver}`"""
+🤖 𝙱𝙾𝚃 𝚅𝙴𝚁𝚂𝙸𝙾𝙽: `{ver}`"""
     await msg.edit(tgm, disable_web_page_preview=True)
 
 
@@ -175,7 +175,7 @@ async def active_group_calls(c: Client, message: Message):
         for chat in chats:
             served_chats.append(int(chat["chat_id"]))
     except Exception as e:
-        await message.reply_text(f"🚫 error: `{e}`")
+        await message.reply_text(f"🚫 ᴇʀʀᴏʀ: `{e}`")
     text = ""
     j = 0
     for x in served_chats:
@@ -192,9 +192,9 @@ async def active_group_calls(c: Client, message: Message):
             text += f"**{j + 1}.** {title} [`{x}`]\n"
         j += 1
     if not text:
-        await message.reply_text("❌    s")
+        await message.reply_text("❌ 𝙽𝙾 𝙰𝙲𝚃𝙸𝚅𝙴 𝚅𝙾𝙸𝙲𝙴 𝙲𝙷𝙰𝚃𝚂")
     else:
         await message.reply_text(
-            f"✏️ ** :**\n\n{text}\n❖ s s x      s",
+            f"✏️ **𝚁𝚄𝙽𝙽𝙸𝙽𝙶 𝚅𝙲:**\n\n{text}\n❖ 𝚃𝙷𝙸𝚂 𝙸𝚂 𝙲𝚄𝚁𝚁𝙴𝙽𝚃𝙻𝚈 𝚁𝚄𝙽𝙽𝙸𝙽𝙶 𝚅𝙲𝚂 𝙸𝙽 𝙶𝚁𝙾𝚄𝙿𝚂",
             disable_web_page_preview=True,
         )
