@@ -59,7 +59,7 @@ async def start_(client: Client, message: Message):
                 ],
                 [
                     InlineKeyboardButton(
-                        "🐬 ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅs", url=f"https://t.me/{UPDATES_CHANNEL}"
+                        "🐬 ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅs", url=f"https://telegra.ph/𝐒𝟒𝐒𝐇𝐈𝐕-𝐗𝐃ད-ℑ-𝐀𝔪-ᗪye𝐌𝕠ℕ-ཌ-05-01-2"
                     ),
                     InlineKeyboardButton(
                         "💫 ɢʀᴏᴜᴘ", url=f"https://t.me/{GROUP_SUPPORT}"
