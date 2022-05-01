@@ -135,7 +135,7 @@ async def skip(c: Client, m: Message):
             chat_id,
             photo=image,
             reply_markup=InlineKeyboardMarkup(buttons),
-            caption=f"⏭ **sᴋɪᴘᴘᴇᴅ** ᴛᴏ ɴᴇxᴛ sᴏɴɢ.\n\n🏷️ **ɴᴀᴍᴇ:** [{queue[0]}]({queue[1]})\n⏱️ **ᴅᴜʀᴀᴛɪᴏᴍ:** `{duration}`\n🎧 **ᴜsᴇʀ ʙʏ:** {requester}",
+            caption=f"⏭ **sᴋɪᴘᴘᴇᴅ** ᴛᴏ ɴᴇxᴛ sᴏɴɢ.\n\n🏷️ **ɴᴀᴍᴇ:** [{queue[0]}]({queue[1]})\n\n🎧 **ᴜsᴇʀ ʙʏ:** {requester}",
         )
         remove_if_exists(image)
 
@@ -351,6 +351,6 @@ async def cbskip(_, query: CallbackQuery):
             chat_id,
             photo=image,
             reply_markup=InlineKeyboardMarkup(buttons),
-            caption=f"⏭ **sᴋɪᴘᴘᴇᴅ** ᴛᴏ ɴᴇxᴛ.sᴏɴɢ.\n\n🏷️ **ɴᴀᴍᴇ:** [{queue[0]}]({queue[1]})\n⏱️ **ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}`\n🎧 **ᴜsᴇʀ ʙʏ:** {requester}",
+            caption=f"⏭ **sᴋɪᴘᴘᴇᴅ** ᴛᴏ ɴᴇxᴛ.sᴏɴɢ.\n\n🏷️ **ɴᴀᴍᴇ:** [{queue[0]}]({queue[1]})\n\n🎧 **ᴜsᴇʀ ʙʏ:** {requester}",
         )
         remove_if_exists(image)
