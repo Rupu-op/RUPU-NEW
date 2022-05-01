@@ -185,7 +185,7 @@ async def new_chat(c: Client, m: Message):
                     return await bot.leave_chat(chat_id)
             if member.id == me_bot.id:
                 return await m.reply(
-                    "❤️ ʜᴇʏ ɪᴍ{me_bot.first_name} ʜᴇʀᴇ ғᴏʀ ᴘʟᴀʏ sᴏɴɢs",
+                    f"❤️ ʜᴇʏ ɪᴍ {me_bot.first_name} ʜᴇʀᴇ ғᴏʀ ᴘʟᴀʏ sᴏɴɢs",
                     )
             return
         except Exception:
