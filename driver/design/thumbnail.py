@@ -52,8 +52,8 @@ async def thumb(thumbnail, title, userid, ctitle):
         font=font2,
     )
     draw.text(
-        (30, 543),
-        f"Playing on {ctitle[:12]}",
+        (25, 595),
+        f"Playing on {ctitle[:8]}",
         fill="black",
         font=font,
     )
