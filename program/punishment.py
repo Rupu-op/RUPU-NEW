@@ -47,13 +47,13 @@ async def global_banned(c: Client, message: Message):
         from_user = message.from_user
         BOT_ID = me_bot.id
         if user.id == from_user.id:
-            await message.reply_text("You can't gban yourself !")
+            await message.reply_text("ʏᴏᴜ ᴄᴀɴᴛ ɢʙᴀɴ ʏᴏᴜʀsᴇʟғ !")
         elif user.id == BOT_ID:
-            await message.reply_text("I can't gban myself !")
+            await message.reply_text("ɪ ᴄᴀɴᴛ ɢʙᴀᴍ ᴍʏsᴇʟғ!")
         elif user.id in SUDO_USERS:
-            await message.reply_text("You can't gban sudo user !")
+            await message.reply_text("ʏᴏᴜ ᴄᴀɴᴛ ɢʙᴀɴ sᴜᴅᴏᴇʀs !")
         elif user.id in OWNER_ID:
-            await message.reply_text("You can't gban my creator !")
+            await message.reply_text("ᴛʜɪs ɪs ᴍʏ ᴏᴡɴᴇʀ...ʏᴏᴜ ᴍᴄ !")
         else:
             await add_gban_user(user.id)
             served_chats = []
@@ -61,7 +61,7 @@ async def global_banned(c: Client, message: Message):
             for chat in chats:
                 served_chats.append(int(chat["chat_id"]))
             m = await message.reply_text(
-                f"🚷 **  {user.mention}**\n⏱ x : `{len(served_chats)}`"
+                f"🚷 **ɢʙᴀɴɴɪɴɢ {user.mention}**\n⏱ ᴇxᴘᴇᴄᴛᴇᴅ ᴛɪᴍᴇ: `{len(served_chats)}`"
             )
             number_of_chats = 0
             for num in served_chats:
@@ -74,13 +74,13 @@ async def global_banned(c: Client, message: Message):
                 except Exception:
                     pass
             ban_text = f"""
-🚷 **   [{BOT_NAME}](https://t.me/{bn})
+🚷 **ɴᴇᴡ ɢʙᴀɴ ᴏɴ [{BOT_NAME}](https://t.me/{bn})
 
-**:** {message.chat.title} [`{message.chat.id}`]
-**s s:** {from_user.mention}
-** s:** {user.mention}
-** s :** `{user.id}`
-**s:** `{number_of_chats}`"""
+**ᴏʀɪɢɪɴ:** {message.chat.title} [`{message.chat.id}`]
+**sᴜᴅᴏ ᴜsᴇʀ:** {from_user.mention}
+**ɢʙᴀɴɴᴇᴅ ᴜsᴇʀ:** {user.mention}
+**ɢʙᴀɴɴsᴅ ᴜsᴇʀ ɪᴅ:** `{user.id}`
+**ᴄʜᴀᴛs:** `{number_of_chats}`"""
             try:
                 await m.delete()
             except Exception:
@@ -96,17 +96,17 @@ async def global_banned(c: Client, message: Message):
     mention = message.reply_to_message.from_user.mention
     BOT_ID = me_bot.id
     if user_id == from_user_id:
-        await message.reply_text("   s!")
+        await message.reply_text("ʏᴏᴜ ᴄᴀɴᴛ ɢʙᴀɴ ʏᴏᴜʀsᴇʟғ!")
     elif user_id == BOT_ID:
-        await message.reply_text("I can't gban myself !")
+        await message.reply_text(" ɪᴄᴀɴᴛ ɢʙᴀɴ ᴍʏsʟᴇғ !")
     elif user_id in SUDO_USERS:
-        await message.reply_text("   ss !")
+        await message.reply_text("ʏᴏᴜ ᴄᴀɴᴛ ɢʙᴀɴ sᴜᴅᴏᴇʀs !")
     elif user_id in OWNER_ID:
-        await message.reply_text("      !")
+        await message.reply_text("ᴛʜɪs ɪs ᴍʏ ᴏᴡɴᴇʀ..ʏᴏᴜ ᴍᴄ !")
     else:
         is_gbanned = await is_gbanned_user(user_id)
         if is_gbanned:
-            await message.reply_text("s s  ")
+            await message.reply_text("ᴛʜɪs ɪs ᴀʟʀᴇᴀᴅʏ ɢʙᴀɴɴᴇᴅ")
         else:
             await add_gban_user(user_id)
             served_chats = []
@@ -114,7 +114,7 @@ async def global_banned(c: Client, message: Message):
             for chat in chats:
                 served_chats.append(int(chat["chat_id"]))
             m = await message.reply_text(
-                f"🚷 **  {mention}**\n⏱ x : `{len(served_chats)}`"
+                f"🚷 **ɢʙᴀɴɴɪɴɢ {mention}**\n⏱ ᴇxᴘᴇᴄᴛᴇᴅ ᴛɪᴍᴇ: `{len(served_chats)}`"
             )
             number_of_chats = 0
             for num in served_chats:
@@ -127,13 +127,13 @@ async def global_banned(c: Client, message: Message):
                 except Exception:
                     pass
             ban_text = f"""
-🚷 **   [{BOT_NAME}](https://t.me/{bn})
+🚷 **ɴᴇᴡ ɢʙᴀɴ ʙʏ [{BOT_NAME}](https://t.me/{bn})
 
-**:** {message.chat.title} [`{message.chat.id}`]
-**s s:** {from_user_mention}
-** s:** {mention}
-** s :** `{user_id}`
-**s:** `{number_of_chats}`"""
+**ᴏʀɪɢɪɴ:** {message.chat.title} [`{message.chat.id}`]
+**sᴜᴅᴏ ᴜsᴇʀs:** {from_user_mention}
+**ɢʙᴀɴɴᴇᴅ ᴜsᴇʀ:** {mention}
+**ɢʙᴀɴɴᴇᴅ ᴜsᴇʀ ɪᴅ:** `{user_id}`
+**ᴄʜᴀʏs:** `{number_of_chats}`"""
             try:
                 await m.delete()
             except Exception:
@@ -152,7 +152,7 @@ async def ungban_global(c: Client, message: Message):
     if not message.reply_to_message:
         if len(message.command) != 2:
             await message.reply_text(
-                "**s:**\n\n/ungban [username | user_id]"
+                "**ᴜsᴀɢᴇ:**\n\n/ungban [username | user_id]"
             )
             return
         user = message.text.split(None, 1)[1]
@@ -162,19 +162,19 @@ async def ungban_global(c: Client, message: Message):
         from_user = message.from_user
         BOT_ID = me_bot.id
         if user.id == from_user.id:
-            await message.reply_text("   s!")
+            await message.reply_text("ʏᴏᴜ ᴄᴀɴᴛ ᴜɴɢʙᴀɴ ʏᴏᴜʀsᴇʟғ ʙᴄᴏᴢ ᴜ ɴᴇᴠᴇʀ ɢʙᴀɴɴᴇᴅ !")
         elif user.id == BOT_ID:
-            await message.reply_text("   s!")
+            await message.reply_text("ɪ ɴᴇᴠᴇʀ ʙᴇ ɢʙᴀɴ ʙʏ ᴍᴇ !")
         elif user.id in SUDO_USERS:
-            await message.reply_text("s s    /")
+            await message.reply_text("sᴜᴅᴏ ᴜsᴇʀs ᴄᴀɴᴛ ʙᴇ ɢʙᴀɴ /ᴜɴɢʙᴀɴ")
         elif user.id in OWNER_ID:
-            await message.reply_text("      /")
+            await message.reply_text("ᴛʜɪs ɪs ᴍʏ ᴘʀᴇᴄɪᴏᴜs ᴏᴡɴᴇʀ ɴᴏᴏɴᴄᴇ ᴄᴀɴ ʙᴀɴ ʜɪᴍ/ʜᴇʀ")
         else:
             is_gbanned = await is_gbanned_user(user.id)
             if not is_gbanned:
-                await message.reply_text("s s   !")
+                await message.reply_text("ᴛʜɪs ɪs ɴᴏᴛ ɢʙᴀɴɴᴇᴅ!")
             else:
-                msg = await message.reply_text("» ...")
+                msg = await message.reply_text("» ᴜɴɢʙᴀɴɴɪɴɢ...")
                 await remove_gban_user(user.id)
                 served_chats = []
                 chats = await get_served_chats()
@@ -190,26 +190,26 @@ async def ungban_global(c: Client, message: Message):
                         await asyncio.sleep(int(e.x))
                     except BaseException:
                         pass
-                await msg.edit_text("✅ s s ")
+                await msg.edit_text("✅ ᴛʜɪs ᴜsᴇʀ ʜᴀs ᴜɴɢʙᴀɴɴᴇᴅ")
         return
     from_user_id = message.from_user.id
     user_id = message.reply_to_message.from_user.id
     mention = message.reply_to_message.from_user.mention
     BOT_ID = me_bot.id
     if user_id == from_user_id:
-        await message.reply_text("   s!")
+        await message.reply_text("ʏᴏᴜ ᴄᴀɴᴛ ᴜɴɢʙᴀɴ ʏᴏᴜʀsᴇʟғ ʙᴄᴏᴢ ᴜ ɴᴇᴠᴇʀ ɢʙᴀɴɴᴇᴅ !")
     elif user_id == BOT_ID:
-        await message.reply_text("   s!")
+        await message.reply_text("ɪ ɴᴇᴠᴇʀ ʙᴇ ɢʙᴀɴ ʙʏ ᴍᴇ !")
     elif user_id in SUDO_USERS:
-        await message.reply_text("s s    /!")
+        await message.reply_text("sᴜᴅᴏ ᴜsᴇʀs ᴄᴀɴᴛ ʙᴇ ɢʙᴀɴ /ᴜɴɢʙᴀɴ !")
     elif user_id in OWNER_ID:
-        await message.reply_text("      /!")
+        await message.reply_text("ᴛʜɪs ɪs ᴍʏ ᴘʀᴇᴄɪᴏᴜs ᴏᴡɴᴇʀ ɴᴏ ᴏɴᴇ ᴄᴀɴ ʙᴀɴ ʜɪᴍ/ʜᴇʀ !")
     else:
         is_gbanned = await is_gbanned_user(user_id)
         if not is_gbanned:
-            await message.reply_text("s s   !")
+            await message.reply_text("ᴛʜɪs ɪs ɴᴏᴛ ɢʙᴀɴɴᴇᴅ!")
         else:
-            msg = await message.reply_text("» ...")
+            msg = await message.reply_text("» ᴜɴɢʙᴀɴɴɪɴɢ...")
             await remove_gban_user(user_id)
             served_chats = []
             chats = await get_served_chats()
@@ -225,4 +225,4 @@ async def ungban_global(c: Client, message: Message):
                     await asyncio.sleep(int(e.x))
                 except BaseException:
                     pass
-                await msg.edit_text("✅ s s s ")
+                await msg.edit_text("✅ ᴛʜɪs ᴜsᴇʀ ʜᴀs ᴜɴɢʙᴀɴɴᴇᴅ")
