@@ -23,7 +23,6 @@ import traceback
 from pyrogram.types import Message
 from pyrogram import Client, filters, __version__ as pyrover
 from pytgcalls import (__version__ as pytgver)
-from python import (__version__ as pyver)
 
 from program import __version__ as ver
 
@@ -113,7 +112,7 @@ async def broadcast_message_pin(c: Client, message: Message):
         return
     if len(message.command) < 2:
         await message.reply_text(
-            "**s**:\n\n/broadcast_pin (`message`) or (`reply to message`)"
+            "**ᴜsᴀɢᴇ**:\n\n/broadcast_pin (`message`) or (`reply to message`)"
         )
         return
     text = message.text.split(None, 1)[1]
@@ -156,9 +155,8 @@ async def bot_statistic(c: Client, message: Message):
 
 ➥ **𝙶𝚁𝙾𝚄𝙿 𝙲𝙷𝙰𝚃𝚂** : `{served_chats}`
 ➥ **𝚄𝚂𝙴𝚁𝚂** : `{served_users}`
-➥ **𝙶𝙱𝙰𝙼𝙼𝙴𝙳 𝚄𝚂𝙴𝚁𝚂** : `{gbans_usertl}`
+➥ **𝙶𝙱𝙰ɴɴ𝙴𝙳 𝚄𝚂𝙴𝚁𝚂** : `{gbans_usertl}`
 
-➛ **𝙿𝚈𝚃𝙷𝙾𝙽 𝚅𝙴𝚁** : `{pyver}`
 ➛ **𝙿𝙶𝚃𝚈𝙲𝙰𝙻𝙻𝚂 𝚅𝙴𝚁** : `{pytgver.__version__}`
 ➛ **𝙿𝚈𝚁𝙾𝙶𝚁𝙰𝙼 𝚅𝙴𝚁** : `{pyrover}`
 
