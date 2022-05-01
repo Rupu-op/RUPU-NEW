@@ -132,12 +132,12 @@ async def stream_end_handler(_, u: Update):
         elif queue == 2:
             await bot.send_message(
                 chat_id,
-                "❌ an error occurred\n\n» **Clearing** Queues and leaving video chat.",
+                "❌ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀᴇᴅ\n\n» **ᴄʟᴇᴀʀɪɴɢ** ǫᴜᴇᴜᴇ & ʟᴇᴀᴠᴇ ᴠᴄ.",
             )
         else:
             await bot.send_message(
                 chat_id,
-                f"⏩ **sᴛʀᴇᴀᴍɪɴɢ ɴᴇxᴛ ᴛʀᴀᴄᴋ**\n\n🗂 ** ɴᴀᴍᴇ:** [{queue[0]}]({queue[1]}) | `{queue[2]}`\n💭 **ᴄʜᴀᴛ:** `{message.chat.title}`",
+                f"⏩ **sᴛʀᴇᴀᴍɪɴɢ ɴᴇxᴛ ᴛʀᴀᴄᴋ**\n\n🏷️ ** ɴᴀᴍᴇ:** [{queue[0]}]({queue[1]}) | `{queue[2]}`\n\n💡 **sᴛᴀᴛᴜs:** `ᴘʟᴀʏɪɴɢ`",
                 disable_web_page_preview=True,
                 reply_markup=keyboard,
             )
