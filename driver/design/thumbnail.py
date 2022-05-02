@@ -52,10 +52,10 @@ async def thumb(thumbnail, title, userid, ctitle):
         font=font2,
     )
     draw.text(
-        (30, 615),
+        (25, 530),
         f"Playing on {ctitle[:12]}",
         fill="black",
-        font=font,
+        font=font2,
     )
     img.save(f"search/final{userid}.png")
     os.remove(f"search/temp{userid}.png")
