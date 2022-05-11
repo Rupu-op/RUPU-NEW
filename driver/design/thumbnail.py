@@ -46,14 +46,14 @@ async def thumb(thumbnail, title, userid, ctitle):
     font = ImageFont.truetype("driver/source/regular.ttf", 49)
     font2 = ImageFont.truetype("driver/source/medium.ttf", 70)
     draw.text(
-        (30, 615),
-        f"{title[:20]}...",
+        (20, 46),
+        f"Now Playing [:20]",
         fill="black",
         font=font2,
     )
     draw.text(
-        (30, 543),
-        f"Playing on {ctitle[:12]}",
+        (25, 595),
+        f"{title[:12]}...",
         fill="black",
         font=font,
     )
