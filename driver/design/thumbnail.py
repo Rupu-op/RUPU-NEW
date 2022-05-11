@@ -46,16 +46,16 @@ async def thumb(thumbnail, title, userid, ctitle):
     font = ImageFont.truetype("driver/source/regular.ttf", 49)
     font2 = ImageFont.truetype("driver/source/medium.ttf", 70)
     draw.text(
-        (20, 46),
+        (30, 543),
         f"Now Playing[:12]",
         fill="black",
-        font=font2,
+        font=font,
     )
     draw.text(
-        (25, 595),
-        f"{title[:22]}...",
+        (30, 615),
+        f"{title[:20]}...",
         fill="black",
-        font=font,
+        font=font2,
     )
     img.save(f"search/final{userid}.png")
     os.remove(f"search/temp{userid}.png")
