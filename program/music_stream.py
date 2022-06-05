@@ -41,7 +41,7 @@ from driver.database.dbqueue import add_active_chat, remove_active_chat, music_o
 from driver.decorators import require_admin, check_blacklist
 
 from config import BOT_USERNAME, IMG_1, IMG_2, IMG_5
-from asyncio.exceptions import TimeoutError
+from asyncio import QueueEmpty
 from youtubesearchpython import VideosSearch
 
 
