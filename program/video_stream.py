@@ -20,7 +20,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/licenses.html
 import re
 import asyncio
 
-from asyncio.exceptions import TimeoutError
+from asyncio import QueueEmpty
 from config import BOT_USERNAME, IMG_1, IMG_2, IMG_5
 
 from program import LOGS
