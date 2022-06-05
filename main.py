@@ -1,6 +1,6 @@
 import asyncio
 
-
+from program import LOGS
 from pytgcalls import idle
 from driver.core import calls, bot, user
 
