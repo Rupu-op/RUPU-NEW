@@ -140,7 +140,7 @@ async def stop_group_call(c: Client, m: Message):
     msg = await c.send_message(chat_id, "`sᴛᴏᴘᴘɪɴɢ...`")
     try:
         if not (
-            group_call := (
+            group_call(
                 await get_calls(m, err_msg="ᴠᴄ ɪɴ ɴᴏᴛ ᴀᴄᴛɪᴠᴇ")
             )
         ):
